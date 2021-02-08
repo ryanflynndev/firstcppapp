@@ -1,31 +1,42 @@
 #include <iostream>
 using namespace std;
 
+void welcome();
+char getYesOrNo();
+void printResponse(char response);
+
+void askYesOrNo();
+
+int main() {
+	
+	askYesOrNo();
+
+	system("pause");
+}
+
 void welcome() {
 	cout << "Welcome!" << endl;
 }
 
-void printNumber(int num) {
-	{
-		cout << num << endl;
-	}
-}
+char getYesOrNo() {
 
-int add(int a, int b) {
-	int result;
-	result = a + b;
-	return result;
-}
-
-int main() {
+	cout << "Enter Yes or No y/n" << endl; 
 	
+	char response; 
+	cin >> response;
+
+	return response;
+
+}
+
+void printResponse(char response) {
+
+	cout << "Your answer was: " << response << endl;
+}
+
+void askYesOrNo() {
 	welcome();
 
-	printNumber(44);
-
-	int c;
-	c = add(1, 4);
-	printNumber(c);
-	
-	system("pause");
+	char answer = getYesOrNo();
+	printResponse(answer);
 }
