@@ -1,22 +1,34 @@
 #include <iostream>
 using namespace std;
 
-enum SubmitButtonStatus {
-	SB_Not_Clicked,
-	SB_Clicked
+struct Player
+{
+	int Level;
+	float Health;
+	float Damage;
+	float Stamina;
+
+	void TakeDamage(float dmg) {
+		Health -= dmg;
+	}
+
+	int GetLevel()
+	{
+		if (Level > 10) {
+			cout << "Level is over 10! \n";
+		}
+		return Level;
+	}
 };
 
-int main() {
 
-	SubmitButtonStatus button_status;
-	button_status = SB_Clicked;
-	
-	if(button_status == SB_Clicked){
-		cout << "Submit button has been clicked!" << endl;
-	}
-	else if (button_status == SB_Not_Clicked) {
-		cout << "Submit button has not been clicked yet" << endl;
-	}
+
+int main() 
+{
+	Player ryan = { 11, 100.f, 10.f, 50.f };
+
+
+	cout << "Ryan's Level = " << ryan.GetLevel() << endl;
 	
 	system("pause");
 
