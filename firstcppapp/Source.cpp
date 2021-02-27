@@ -1,19 +1,24 @@
 #include <iostream>
 using namespace std;
 
+void Print(string str);
+void Print(int i);
 
 int main() 
 {
-	string myStr = "Druid";
-	string& myRef = myStr;
-
-	myRef += " Mechanics";
-
-	cout << myStr << endl;
-	cout << myRef << endl;
-
+	Print(3);
+	Print("Hi");
 	
 	system("pause");
 
 }
 
+void Print(string str)
+{
+	cout << str << endl;
+}
+
+void Print(int i) 
+{
+	cout << i << endl;
+}
